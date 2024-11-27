@@ -16,7 +16,6 @@ const App = () => {
     { type: 'warn', content: '> CAUTION: Advanced AI System Active' },
     { type: 'system', content: 'Type "help" for available commands' }
   ]);
-  const [expandedTool, setExpandedTool] = useState(null);
   const [statusMessage, setStatusMessage] = useState('QUANTUM ENCRYPTION ACTIVE');
 
   useEffect(() => {
@@ -123,23 +122,6 @@ const App = () => {
       setDexLoading(false);
     }
   };
-
-  const tools = [
-    {
-      id: 'forge',
-      icon: <Code />,
-      name: 'Contract Forge',
-      description: 'Deploy and interact with Solana smart contracts',
-      features: ['Contract deployment', 'Code verification', 'Security analysis']
-    },
-    {
-      id: 'analytics',
-      icon: <LayoutGrid />,
-      name: 'Quantum Analytics',
-      description: 'Real-time blockchain analysis and insights',
-      features: ['Transaction tracking', 'Pattern detection', 'Risk assessment']
-    }
-  ];
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-gray-900 to-black text-green-400">
@@ -271,77 +253,77 @@ const App = () => {
             </div>
           )}
 
-            {activeTab === 'upcoming' && (
-              <div className="bg-gray-900/30 border border-green-800/50 rounded-lg p-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-green-900/10 via-blue-900/10 to-green-900/10 animate-pulse"></div>
-                
-                <h2 className="text-xl mb-6 flex items-center gap-2 relative">
-                  <Clock className="text-green-400 animate-pulse" /> UPCOMING TOOLS
-                </h2>
+          {activeTab === 'upcoming' && (
+            <div className="bg-gray-900/30 border border-green-800/50 rounded-lg p-6 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-900/10 via-blue-900/10 to-green-900/10 animate-pulse"></div>
+              
+              <h2 className="text-xl mb-6 flex items-center gap-2 relative">
+                <Clock className="text-green-400 animate-pulse" /> UPCOMING TOOLS
+              </h2>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  {[
-                    {
-                      icon: <Users className="animate-pulse" />,
-                      title: "CHECK TOP 10 HOLDERS",
-                      status: "NEW WALLETS: 0/10",
-                      desc: "Advanced wallet analysis and risk assessment",
-                      color: "from-green-600/20 to-blue-600/20"
-                    },
-                    {
-                      icon: <UserPlus className="animate-pulse" />,
-                      title: "TOP HOLDERS %",
-                      status: "0% / 0% / 0% / 0%",
-                      desc: "Distribution analysis and monitoring",
-                      color: "from-blue-600/20 to-purple-600/20"
-                    },
-                    {
-                      icon: <Package className="animate-pulse" />,
-                      title: "CHECK SOCIALS",
-                      status: "USED BEFORE / NEW",
-                      desc: "Historical social media tracking",
-                      color: "from-purple-600/20 to-green-600/20"
-                    },
-                    {
-                      icon: <MessageSquare className="animate-pulse" />,
-                      title: "BUNDLE CHECK",
-                      status: "YES / NO",
-                      desc: "AI-powered bundle detection",
-                      color: "from-red-600/20 to-orange-600/20"
-                    }
-                  ].map((tool, index) => (
-                    <div 
-                      key={index}
-                      className="group relative bg-black/50 p-6 rounded-lg border border-green-700 hover:border-green-500 
-                                transition-all duration-300 overflow-hidden cursor-pointer"
-                    >
-                      <div className={`absolute inset-0 bg-gradient-to-r ${tool.color} opacity-0 
-                                      group-hover:opacity-100 transition-opacity duration-500`}></div>
-                      
-                      <div className="relative z-10">
-                        <div className="flex items-center justify-between mb-4">
-                          <h3 className="text-lg text-green-400 flex items-center gap-2">
-                            {tool.icon}
-                            {tool.title}
-                          </h3>
-                          <div className="text-xs text-blue-400/80 px-2 py-1 rounded-full border border-blue-400/30 
-                                        bg-blue-900/20 animate-pulse">
-                            SOON
-                          </div>
-                        </div>
-                        
-                        <p className="text-green-500/70 text-sm font-mono">{tool.status}</p>
-                        <p className="mt-2 text-green-400/60 text-sm">{tool.desc}</p>
-                        
-                        <div className="mt-4 h-1 w-full bg-green-900/30 rounded-full overflow-hidden">
-                          <div className="h-full w-1/3 bg-green-500/50 rounded-full animate-pulse"></div>
+              <div className="grid md:grid-cols-2 gap-6">
+                {[
+                  {
+                    icon: <Users className="animate-pulse" />,
+                    title: "CHECK TOP 10 HOLDERS",
+                    status: "NEW WALLETS: 0/10",
+                    desc: "Advanced wallet analysis and risk assessment",
+                    color: "from-green-600/20 to-blue-600/20"
+                  },
+                  {
+                    icon: <UserPlus className="animate-pulse" />,
+                    title: "TOP HOLDERS %",
+                    status: "0% / 0% / 0% / 0%",
+                    desc: "Distribution analysis and monitoring",
+                    color: "from-blue-600/20 to-purple-600/20"
+                  },
+                  {
+                    icon: <Package className="animate-pulse" />,
+                    title: "CHECK SOCIALS",
+                    status: "USED BEFORE / NEW",
+                    desc: "Historical social media tracking",
+                    color: "from-purple-600/20 to-green-600/20"
+                  },
+                  {
+                    icon: <MessageSquare className="animate-pulse" />,
+                    title: "BUNDLE CHECK",
+                    status: "YES / NO",
+                    desc: "AI-powered bundle detection",
+                    color: "from-red-600/20 to-orange-600/20"
+                  }
+                ].map((tool, index) => (
+                  <div 
+                    key={index}
+                    className="group relative bg-black/50 p-6 rounded-lg border border-green-700 hover:border-green-500 
+                              transition-all duration-300 overflow-hidden cursor-pointer"
+                  >
+                    <div className={`absolute inset-0 bg-gradient-to-r ${tool.color} opacity-0 
+                                    group-hover:opacity-100 transition-opacity duration-500`}></div>
+                    
+                    <div className="relative z-10">
+                      <div className="flex items-center justify-between mb-4">
+                        <h3 className="text-lg text-green-400 flex items-center gap-2">
+                          {tool.icon}
+                          {tool.title}
+                        </h3>
+                        <div className="text-xs text-blue-400/80 px-2 py-1 rounded-full border border-blue-400/30 
+                                      bg-blue-900/20 animate-pulse">
+                          SOON
                         </div>
                       </div>
+                      
+                      <p className="text-green-500/70 text-sm font-mono">{tool.status}</p>
+                      <p className="mt-2 text-green-400/60 text-sm">{tool.desc}</p>
+                      
+                      <div className="mt-4 h-1 w-full bg-green-900/30 rounded-full overflow-hidden">
+                        <div className="h-full w-1/3 bg-green-500/50 rounded-full animate-pulse"></div>
+                      </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
-            )}
+            </div>
+          )}
 
           {activeTab === 'dex' && (
             <div className="bg-gray-900/30 border border-green-800/50 rounded-lg p-6">
