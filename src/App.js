@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Terminal, Cpu, Network, Shield, Code, LayoutGrid, Bot, ChevronRight, Wrench, Twitter, DollarSign, Search, AlertCircle, Clock, Users, UserPlus, Package, MessageSquare } from 'lucide-react';
+import { Terminal, Cpu, Network, Shield, Bot, Twitter, DollarSign, Search, AlertCircle, Clock, Users, UserPlus, Package, MessageSquare } from 'lucide-react';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('overview');
