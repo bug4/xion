@@ -141,7 +141,7 @@ const App = () => {
 
           <div className="flex items-center gap-4">
             <a
-              href="https://twitter.com/QUAN_AI"
+              href="https://x.com/AgentQuanAI"
               target="_blank"
               rel="noopener noreferrer"
               className="text-green-400 hover:text-green-300 transition-colors"
