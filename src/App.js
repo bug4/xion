@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Terminal, Cpu, Network, Shield, Code, LayoutGrid, Bot, ChevronRight, Wrench, Twitter, DollarSign, Search, AlertCircle } from 'lucide-react';
+import { Terminal, Cpu, Network, Shield, Code, LayoutGrid, Bot, ChevronRight, Wrench, Twitter, DollarSign, Search, AlertCircle, Clock, Users, UserPlus, Package, MessageSquare } from 'lucide-react';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -177,12 +177,12 @@ const App = () => {
                 <span>Overview</span>
               </button>
               <button 
-                onClick={() => setActiveTab('tools')}
+                onClick={() => setActiveTab('upcoming')}
                 className={`flex items-center gap-2 px-3 py-1 rounded transition-colors
-                  ${activeTab === 'tools' ? 'bg-green-500 text-black' : 'hover:bg-gray-800'}`}
+                  ${activeTab === 'upcoming' ? 'bg-green-500 text-black' : 'hover:bg-gray-800'}`}
               >
-                <Wrench size={16} />
-                <span>Tools</span>
+                <Clock size={16} />
+                <span>Upcoming</span>
               </button>
               <button 
                 onClick={() => setActiveTab('dex')}
@@ -271,45 +271,77 @@ const App = () => {
             </div>
           )}
 
-          {activeTab === 'tools' && (
-            <div className="bg-gray-900/30 border border-green-800/50 rounded-lg p-6">
-              <h2 className="text-xl mb-6 flex items-center gap-2">
-                <Wrench /> Quantum Toolset
-              </h2>
-              <div className="space-y-4">
-                {tools.map((tool) => (
-                  <div key={tool.id} className="group">
-                    <button
-                      onClick={() => setExpandedTool(expandedTool === tool.id ? null : tool.id)}
-                      className="w-full bg-black/50 p-4 rounded border border-green-900 hover:border-green-700 
-                               transition-colors flex items-center justify-between cursor-pointer"
+            {activeTab === 'upcoming' && (
+              <div className="bg-gray-900/30 border border-green-800/50 rounded-lg p-6 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-green-900/10 via-blue-900/10 to-green-900/10 animate-pulse"></div>
+                
+                <h2 className="text-xl mb-6 flex items-center gap-2 relative">
+                  <Clock className="text-green-400 animate-pulse" /> UPCOMING TOOLS
+                </h2>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  {[
+                    {
+                      icon: <Users className="animate-pulse" />,
+                      title: "CHECK TOP 10 HOLDERS",
+                      status: "NEW WALLETS: 0/10",
+                      desc: "Advanced wallet analysis and risk assessment",
+                      color: "from-green-600/20 to-blue-600/20"
+                    },
+                    {
+                      icon: <UserPlus className="animate-pulse" />,
+                      title: "TOP HOLDERS %",
+                      status: "0% / 0% / 0% / 0%",
+                      desc: "Distribution analysis and monitoring",
+                      color: "from-blue-600/20 to-purple-600/20"
+                    },
+                    {
+                      icon: <Package className="animate-pulse" />,
+                      title: "CHECK SOCIALS",
+                      status: "USED BEFORE / NEW",
+                      desc: "Historical social media tracking",
+                      color: "from-purple-600/20 to-green-600/20"
+                    },
+                    {
+                      icon: <MessageSquare className="animate-pulse" />,
+                      title: "BUNDLE CHECK",
+                      status: "YES / NO",
+                      desc: "AI-powered bundle detection",
+                      color: "from-red-600/20 to-orange-600/20"
+                    }
+                  ].map((tool, index) => (
+                    <div 
+                      key={index}
+                      className="group relative bg-black/50 p-6 rounded-lg border border-green-700 hover:border-green-500 
+                                transition-all duration-300 overflow-hidden cursor-pointer"
                     >
-                      <div className="flex items-center gap-3">
-                        {tool.icon}
-                        <span>{tool.name}</span>
+                      <div className={`absolute inset-0 bg-gradient-to-r ${tool.color} opacity-0 
+                                      group-hover:opacity-100 transition-opacity duration-500`}></div>
+                      
+                      <div className="relative z-10">
+                        <div className="flex items-center justify-between mb-4">
+                          <h3 className="text-lg text-green-400 flex items-center gap-2">
+                            {tool.icon}
+                            {tool.title}
+                          </h3>
+                          <div className="text-xs text-blue-400/80 px-2 py-1 rounded-full border border-blue-400/30 
+                                        bg-blue-900/20 animate-pulse">
+                            SOON
+                          </div>
+                        </div>
+                        
+                        <p className="text-green-500/70 text-sm font-mono">{tool.status}</p>
+                        <p className="mt-2 text-green-400/60 text-sm">{tool.desc}</p>
+                        
+                        <div className="mt-4 h-1 w-full bg-green-900/30 rounded-full overflow-hidden">
+                          <div className="h-full w-1/3 bg-green-500/50 rounded-full animate-pulse"></div>
+                        </div>
                       </div>
-                      <ChevronRight className={`transition-transform duration-200 
-                        ${expandedTool === tool.id ? 'rotate-90' : ''}`} />
-                    </button>
-                    
-                    {expandedTool === tool.id && (
-                      <div className="mt-2 ml-4 p-4 bg-black/30 rounded border border-green-900/50">
-                        <p className="text-green-400 mb-3">{tool.description}</p>
-                        <ul className="space-y-2">
-                          {tool.features.map((feature, index) => (
-                            <li key={index} className="flex items-center gap-2">
-                              <span className="text-green-500">•</span>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                ))}
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
           {activeTab === 'dex' && (
             <div className="bg-gray-900/30 border border-green-800/50 rounded-lg p-6">
