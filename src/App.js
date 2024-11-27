@@ -35,7 +35,7 @@ const App = () => {
   }, []);
 
   const aiResponses = {
-    'analyze': 'Analyzing current market conditions...\n- SOL/USD: Support level at $95.50\n- Network congestion: Low\n- Transaction volume: High',
+    'analyze': 'Analyzing current market conditions...\n- SOL Price: 238.02$\n- Network congestion: Low\n- Transaction volume: High',
     'scan': 'Scanning Solana network...\n- TPS: 2,547\n- Active validators: 1,842\n- Network health: Optimal',
     'status': 'QUAN AI Status Report:\n- Neural processors: 100% operational\n- Security protocols: Active\n- Connection strength: Strong',
     'help': 'Available commands:\n- analyze : Market analysis\n- scan : Network scan\n- status : System status\n- clear : Clear terminal\n- help : Show this message',
@@ -56,7 +56,7 @@ const App = () => {
     } else {
       await simulateTyping('Processing query through neural network...');
       await new Promise(resolve => setTimeout(resolve, 1000));
-      await simulateTyping(`Analysis: ${input} relates to Solana's blockchain architecture and network protocols.`);
+      await simulateTyping(`QUAN AI Agent: To many request are comming in at this momment, try again in several minutes.`);
     }
 
     setIsProcessing(false);
