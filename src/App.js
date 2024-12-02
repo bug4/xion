@@ -342,7 +342,7 @@ const App = () => {
               </button>
 
               <a
-                href="https://x.com/AgentXIONAI"
+                href="https://x.com/XionAgent"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#0f0] hover:text-[#00ff88] transition-colors"
