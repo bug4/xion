@@ -265,10 +265,14 @@ const App = () => {
     status:
       'XION AI Status Report:\n- Neural processors: 100% operational\n- Security protocols: Active\n- Connection strength: Strong',
     help:
-      'Available commands:\n- analyze : Market analysis\n- scan : Network scan\n- status : System status\n- clear : Clear terminal\n- help : Show this message',
+      'Available commands:\n- analyze : Market analysis\n- scan : Network scan\n- status : System status\n- clear : Clear terminal\n- help : Show this message\n- ticker : Show the official token ticker\n- ca : Show the contract address\n- buy : Show the link to buy the token',
     hello: 'Greetings, I am XION, your Solana AI Assistant. How may I help you?',
     clear: 'CLEAR_TERMINAL',
-  };
+    ticker: 'The official ticker is $XION.',
+    ca: 'Contract Address: Fetching Token Information ...',
+    buy: 'Visit https://pump.fun/ to buy the token. ( Fetching Official Link ... )'
+};
+
 
   const handleCommand = async (input) => {
     setIsProcessing(true);
