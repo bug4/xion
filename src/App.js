@@ -187,8 +187,51 @@ const App = () => {
       'Establishing secure connections...',
       'Deploying smart contracts...',
       'Executing machine learning algorithms...',
-      // Add more code snippets as desired
+      'Mapping neural graphs...',
+      'Calibrating prediction engines...',
+      'Decrypting transaction flows...',
+      'Monitoring validator activity...',
+      'Activating quantum feedback loop...',
+      'Generating probability forecasts...',
+      'Scanning decentralized nodes...',
+      'Refining anomaly detection...',
+      'Harnessing entropy variations...',
+      'Synthesizing cryptographic keys...',
+      'Resolving data packet inconsistencies...',
+      'Integrating multisig protocols...',
+      'Activating neural hashing functions...',
+      'Formulating adaptive AI strategies...',
+      'Decoding latent blockchain signals...',
+      'Compiling dynamic liquidity pools...',
+      'Encrypting consensus algorithms...',
+      'Observing mempool fluctuations...',
+      'Executing zero-knowledge proof iterations...',
+      'Translating network vibrations...',
+      'Preparing deployment kernel...',
+      'Deploying system diagnostics...',
+      'Activating the XION core...',
+      'Aligning quantum coherence...',
+      'Constructing fractal nodes...',
+      'Scanning dimensional shifts...',
+      'Detecting cryptographic resonance...',
+      'Activating singularity protocols...',
+      'Simulating future transactions...',
+      'Analyzing hash rate anomalies...',
+      'Decrypting distributed ledgers...',
+      'Calibrating entropy thresholds...',
+      'Initializing blockchain entanglements...',
+      'Resolving packet loss in neural layers...',
+      'Harnessing predictive computations...',
+      'Encoding multiverse data streams...',
+      'Compiling inter-network dynamics...',
+      'Activating adaptive neural states...',
+      'Deploying AI liquidity engines...',
+      'Realigning decentralized flux...',
+      'Decrypting multidimensional hashes...',
+      'Executing blockchain entropy equations...',
+      'Detecting node synchronization delays...'
     ];
+
 
     let index = 0;
 
@@ -216,7 +259,7 @@ const App = () => {
 
   const aiResponses = {
     analyze:
-      'Analyzing current market conditions...\n- SOL Price: 238.02$\n- Network congestion: Low\n- Transaction volume: High',
+      'Analyzing current market conditions...\n- SOL Price: 225.02$\n- Network congestion: Low\n- Transaction volume: High',
     scan:
       'Scanning Solana network...\n- TPS: 2,547\n- Active validators: 1,842\n- Network health: Optimal',
     status:
