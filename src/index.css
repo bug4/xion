@@ -1,3 +1,176 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles */
+
+/* Glitch Effect */
+.glitch {
+  position: relative;
+  color: #0f0;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+.glitch::before {
+  animation: glitchTop 1s infinite linear alternate-reverse;
+  clip: rect(0, 900px, 0, 0);
+}
+.glitch::after {
+  animation: glitchBottom 1s infinite linear alternate-reverse;
+  clip: rect(0, 900px, 0, 0);
+}
+
+@keyframes glitchTop {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(2px, -2px);
+  }
+  50% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(-2px, 0);
+  }
+  100% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(0, 2px);
+  }
+}
+
+@keyframes glitchBottom {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(-2px, 0);
+  }
+  50% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(2px, 2px);
+  }
+  100% {
+    clip: rect(0, 9999px, 0, 0);
+    transform: translate(0, -2px);
+  }
+}
+
+/* Neon Button Effect */
+.neon-button {
+  position: relative;
+  color: #0f0; /* Original green text color */
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  z-index: 1; /* Ensure the button content is above pseudo-elements */
+}
+
+.neon-button:hover {
+  color: #fff; /* Change text color to white on hover */
+}
+
+.neon-button::before,
+.neon-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: -1; /* Place pseudo-elements behind the button content */
+}
+
+.neon-button::before {
+  background: linear-gradient(45deg, #0f0, #00ff88);
+  filter: blur(4px);
+}
+
+.neon-button::after {
+  background: linear-gradient(45deg, #0f0, #00ff88);
+}
+
+.neon-button:hover::before,
+.neon-button:hover::after {
+  opacity: 1;
+}
+
+.neon-button.active::before,
+.neon-button.active::after {
+  opacity: 1;
+}
+
+.neon-button.active {
+  color: #fff; /* Ensure the text is white when active */
+}
+
+/* Custom Scrollbar Styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #0f0 #000; /* For Firefox */
+}
+
+/* For WebKit browsers */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #000;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #0f0;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #00ff88;
+}
+
+/* Music Button Styles */
+.music-button {
+  position: relative;
+  color: #0f0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s;
+}
+
+.music-button:hover {
+  color: #fff;
+}
+
+.music-button::before,
+.music-button::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: -1;
+}
+
+.music-button::before {
+  background: radial-gradient(circle, rgba(0, 255, 0, 0.5), transparent);
+}
+
+.music-button::after {
+  background: radial-gradient(circle, rgba(0, 255, 0, 0.2), transparent);
+  filter: blur(4px);
+}
+
+.music-button:hover::before,
+.music-button:hover::after {
+  opacity: 1;
+}
+
+.music-button.playing {
+  color: #0f0;
+}
+
+.music-button.playing:hover {
+  color: #fff;
+}
