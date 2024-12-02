@@ -28,7 +28,7 @@ const App = () => {
   const [error, setError] = useState(null);
   const [dexLoading, setDexLoading] = useState(false);
   const [terminalOutput, setTerminalOutput] = useState([
-    { type: 'system', content: 'INITIALIZING QUAN AI SYSTEM...' },
+    { type: 'system', content: 'INITIALIZING XION AI SYSTEM...' },
     { type: 'system', content: '[OK] Neural Network Core Online' },
     { type: 'system', content: '[OK] Blockchain Connection Established' },
     { type: 'warn', content: '> CAUTION: Advanced AI System Active' },
@@ -174,7 +174,7 @@ const App = () => {
     };
   }, []);
 
-  // Simulate QUAN thinking by displaying random code
+  // Simulate XION thinking by displaying random code
   useEffect(() => {
     const codeSnippets = [
       'Initializing quantum matrices...',
@@ -200,7 +200,7 @@ const App = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Auto-scroll "QUAN THINKING" section
+  // Auto-scroll "XION THINKING" section
   useEffect(() => {
     if (thinkingRef.current) {
       thinkingRef.current.scrollTop = thinkingRef.current.scrollHeight;
@@ -220,10 +220,10 @@ const App = () => {
     scan:
       'Scanning Solana network...\n- TPS: 2,547\n- Active validators: 1,842\n- Network health: Optimal',
     status:
-      'QUAN AI Status Report:\n- Neural processors: 100% operational\n- Security protocols: Active\n- Connection strength: Strong',
+      'XION AI Status Report:\n- Neural processors: 100% operational\n- Security protocols: Active\n- Connection strength: Strong',
     help:
       'Available commands:\n- analyze : Market analysis\n- scan : Network scan\n- status : System status\n- clear : Clear terminal\n- help : Show this message',
-    hello: 'Greetings, I am QUAN, your Solana AI Assistant. How may I help you?',
+    hello: 'Greetings, I am XION, your Solana AI Assistant. How may I help you?',
     clear: 'CLEAR_TERMINAL',
   };
 
@@ -241,7 +241,7 @@ const App = () => {
       await simulateTyping('Processing query through neural network...');
       await new Promise((resolve) => setTimeout(resolve, 1000));
       await simulateTyping(
-        `QUAN AI Agent: Too many requests are coming in at this moment, try again in several minutes.`
+        `XION AI Agent: Too many requests are coming in at this moment, try again in several minutes.`
       );
     }
 
@@ -321,8 +321,8 @@ const App = () => {
             <div className="flex items-center">
               <Bot className="w-6 h-6 mr-2 animate-pulse text-[#0f0]" />
               <div>
-                <h1 className="text-2xl font-bold glitch" data-text="QUAN">
-                  QUAN
+                <h1 className="text-2xl font-bold glitch" data-text="XION">
+                  XION
                 </h1>
                 <p className="text-xs text-neonBlue animate-pulse">SOLANA AI AGENT</p>
               </div>
@@ -342,7 +342,7 @@ const App = () => {
               </button>
 
               <a
-                href="https://x.com/AgentQuanAI"
+                href="https://x.com/AgentXIONAI"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#0f0] hover:text-[#00ff88] transition-colors"
@@ -465,10 +465,10 @@ const App = () => {
                   </form>
                 </section>
 
-                {/* QUAN THINKING Section */}
+                {/* XION THINKING Section */}
                 <section className="bg-black border border-[#0f0] rounded-lg p-6">
                   <h2 className="text-xl mb-4 flex items-center gap-2">
-                    <Activity /> QUAN THINKING
+                    <Activity /> XION THINKING
                   </h2>
                   <div
                     ref={thinkingRef}
@@ -643,7 +643,7 @@ const App = () => {
         {/* Footer */}
         <footer className="mt-auto bg-black bg-opacity-80 border-t border-[#0f0] p-4">
           <div className="max-w-7xl mx-auto text-center text-sm">
-            © 2024 QUAN AI SYSTEMS | QUANTUM NEURAL NETWORK | POWERED BY SOLANA
+            © 2024 XION AI SYSTEMS | QUANTUM NEURAL NETWORK | POWERED BY SOLANA
           </div>
         </footer>
       </div>
