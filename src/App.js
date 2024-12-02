@@ -362,7 +362,8 @@ const App = () => {
         <header className="bg-black bg-opacity-80 border-b border-[#0f0] p-4">
           <div className="flex justify-between items-center max-w-7xl mx-auto">
             <div className="flex items-center">
-              <Bot className="w-6 h-6 mr-2 animate-pulse text-[#0f0]" />
+              {/* Remove or comment out this <Bot /> line */}
+      {/* <Bot className="w-6 h-6 mr-2 animate-pulse" /> */}
               <div>
                 <h1 className="text-2xl font-bold glitch" data-text="XION">
                   XION
