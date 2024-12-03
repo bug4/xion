@@ -269,8 +269,8 @@ const App = () => {
     hello: 'Greetings, I am XION, your Solana AI Assistant. How may I help you?',
     clear: 'CLEAR_TERMINAL',
     ticker: 'The official ticker is $XION.',
-    ca: 'Contract Address: Fetching Token Information ...',
-    buy: 'Visit https://pump.fun/ to buy the token. ( Fetching Official Link ... )'
+    ca: 'Contract Address: 2GP1TShcUvUSe7v21dbEwb9DPuJDAKZUXzycZPsvpump',
+    buy: 'Visit https://pump.fun/coin/2GP1TShcUvUSe7v21dbEwb9DPuJDAKZUXzycZPsvpump'
 };
 
 
